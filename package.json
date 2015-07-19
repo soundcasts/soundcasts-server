@@ -1,0 +1,29 @@
+{
+  "name": "Soundcasts",
+  "version": "0.0.0",
+  "description": "Podcasts for SoundCloud",
+  "main": "_server.js",
+  "scripts": {
+    "start": "node _server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L33T-KR3W/soundcasts-server.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/L33T-KR3W/soundcasts-server/issues"
+  },
+  "homepage": "https://github.com/L33T-KR3W/soundcasts-server#readme",
+  "dependencies": {
+    "babel": "^5.6.23",
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "js2xmlparser": "^1.0.0",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.7",
+    "mongoose-timestamp": "^0.4.0",
+    "request": "^2.58.0"
+  }
+}
