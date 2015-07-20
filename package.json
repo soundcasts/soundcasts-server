@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Podcasts for SoundCloud",
   "main": "_server.js",
+  "engines": {
+    "node": "0.12.x"
+  },
   "scripts": {
     "start": "node _server.js"
   },
@@ -24,6 +27,7 @@
     "moment": "^2.10.3",
     "mongoose": "^4.0.7",
     "mongoose-timestamp": "^0.4.0",
-    "request": "^2.58.0"
+    "request": "^2.58.0",
+    "shortid": "^2.2.2"
   }
 }
