@@ -2,12 +2,12 @@
   "name": "Soundcasts",
   "version": "0.0.0",
   "description": "Podcasts for SoundCloud",
-  "main": "_server.js",
+  "main": "index.js",
   "engines": {
-    "node": "0.12.x"
+    "iojs": "^2.4.0"
   },
   "scripts": {
-    "start": "node _server.js"
+    "start": "babel-node index.js"
   },
   "repository": {
     "type": "git",
