@@ -4,10 +4,10 @@
   "description": "Podcasts for SoundCloud",
   "main": "index.js",
   "engines": {
-    "iojs": "^3.0.0"
+    "iojs": "^2.4.0"
   },
   "scripts": {
-    "start": "babel-node index.js --harmony-rest-parameters --harmony-spreadcalls"
+    "start": "babel-node index.js"
   },
   "repository": {
     "type": "git",
