@@ -50,14 +50,14 @@ describe("Soundcast", () => {
       assert.equal(channel.author, 'Hannah Wants');
       assert.equal(channel.link, 'http://soundcloud.com/hannah_wants');
       assert(channel.description.match(/Hannah Wants/));
-      assert.equal(channel.image, 'https://i1.sndcdn.com/avatars-000153476543-el6fm5-t200x200.jpg');
+      assert.equal(channel.image, 'http://i1.sndcdn.com/avatars-000153476543-el6fm5-t200x200.jpg');
 
       var track = channel.tracks[channel.tracks.length - 1];
       assert.equal(track.title, 'Hannah Wants: Mixtape 0212');
       assert(track.description.match(/FEBRUARY 2012/));
       assert.equal(track.duration, '01:19:54');
-      assert.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/download?client_id=83d37608cef935bb382915730917bb7d');
-      assert.equal(track.size, 191695933);
+      assert.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=83d37608cef935bb382915730917bb7d');
+      assert.equal(track.size, 1);
       assert.equal(track.fileFormat, 'mp3');
       assert.equal(track.httpFormat, 'audio/mpeg');
       assert.equal(track.published, 'Tue, 14 Feb 2012 13:56:32 +0000');
