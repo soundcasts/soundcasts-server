@@ -7,7 +7,6 @@
     "es6.properties.computed",
     "es6.spread",
     "es6.tailCall",
-    "es7.objectRestSpread",
     "strict"
   ]
 }
