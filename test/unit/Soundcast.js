@@ -23,7 +23,7 @@ describe("Soundcast", () => {
 
   describe("#constructor()", () => {
     it("should create an instance", () => {
-      var sc = _sc();
+      var sc = new Soundcast(REQ);
       assert.equal(sc.title, QUERY.title);
       assert.equal(sc.userId, QUERY.userId);
       assert.equal(sc.regexString, QUERY.regexString);
@@ -34,6 +34,7 @@ describe("Soundcast", () => {
       delete noRegexStringQuery.regexString;
       var noRegexStringRequest = Object.assign({}, REQ);
       noRegexStringRequest.query = noRegexStringQuery;
+
       var sc = new Soundcast(noRegexStringRequest);
       assert.equal(sc.title, QUERY.title);
       assert.equal(sc.userId, QUERY.userId);
@@ -43,7 +44,7 @@ describe("Soundcast", () => {
 
   describe("#getChannelData()", () => {
     it("should get the right channel data", async () => {
-      var sc = _sc();
+      var sc = new Soundcast(REQ);
 
       var channel = await sc.getChannelData();
       assert.equal(channel.title, QUERY.title);
@@ -66,17 +67,11 @@ describe("Soundcast", () => {
 
   describe("#toXml()", () => {
     it("should output lots of XML", async () => {
-      var sc = _sc();
+      var sc = new Soundcast(REQ);
       await sc.getChannelData();
 
       var xml = sc.toXml();
       assert(xml.length > 1000);
     });
   });
-
 });
-
-
-function _sc() {
-  return new Soundcast(REQ);
-}
