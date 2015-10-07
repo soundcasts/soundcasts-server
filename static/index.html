@@ -7,26 +7,27 @@
 
 <label for="userId">User ID</label>
 <input type="text" id="userId" />
+soundcloud.com/user_id
 
 <br/>
 
 <label for="regexString">Regex Filter</label>
 <input type="text" id="regexString" value=".*" />
+(case-insensitive JavaScript, optional)
 
 <br/>
 <br/>
 
 <label for="url">URL</label>
 <input type="text" id="url" style="width: 800px;" />
-
+<a href="" id="link" target="_blank">Link</a>
 
 
 <script>
-  var inputs = document.querySelectorAll('input');
-  for (var i=0; i<inputs.length; i++) {
-    var input = inputs[i];
-    input.addEventListener('keyup', inputsChanged);
-  }
+  var eventName = 'keypress';
+  id('title').addEventListener(eventName, inputsChanged);
+  id('userId').addEventListener(eventName, inputsChanged);
+  id('regexString').addEventListener(eventName, inputsChanged);
 
   function title() { return document.getElementById('title').value; }
   function userId() { return document.getElementById('userId').value; }
@@ -40,12 +41,11 @@
       url += '&userId=' + encodeURIComponent(userId());
       url += '&regexString=' + encodeURIComponent(regexString());
     }
-    document.getElementById('url').value = url;
+    id('url').value = url;
+    id('link').setAttribute('href', url);
   }
 
-  function forEach(array, callback) {
-    for (var i = 0; i < array.length; i++) {
-      callback.call(null, array[i], i);
-    }
+  function id(id) {
+    return document.getElementById(id);
   }
 </script>
