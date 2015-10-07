@@ -1,0 +1,51 @@
+<h1>Soundcasts</h1>
+
+<label for="title">Title</label>
+<input type="text" id="title" />
+
+<br/>
+
+<label for="userId">User ID</label>
+<input type="text" id="userId" />
+
+<br/>
+
+<label for="regexString">Regex Filter</label>
+<input type="text" id="regexString" value=".*" />
+
+<br/>
+<br/>
+
+<label for="url">URL</label>
+<input type="text" id="url" style="width: 800px;" />
+
+
+
+<script>
+  var inputs = document.querySelectorAll('input');
+  for (var i=0; i<inputs.length; i++) {
+    var input = inputs[i];
+    input.addEventListener('keyup', inputsChanged);
+  }
+
+  function title() { return document.getElementById('title').value; }
+  function userId() { return document.getElementById('userId').value; }
+  function regexString() { return document.getElementById('regexString').value; }
+
+  function inputsChanged() {
+    var url = '';
+    if (title().length && userId().length) {
+      url = 'http://www.soundcasts.net/soundcast';
+      url += '?title=' + encodeURIComponent(title());
+      url += '&userId=' + encodeURIComponent(userId());
+      url += '&regexString=' + encodeURIComponent(regexString());
+    }
+    document.getElementById('url').value = url;
+  }
+
+  function forEach(array, callback) {
+    for (var i = 0; i < array.length; i++) {
+      callback.call(null, array[i], i);
+    }
+  }
+</script>
