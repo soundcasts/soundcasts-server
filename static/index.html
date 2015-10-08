@@ -29,9 +29,9 @@
   id('userId').addEventListener(eventName, inputsChanged);
   id('regexString').addEventListener(eventName, inputsChanged);
 
-  function title() { return document.getElementById('title').value; }
-  function userId() { return document.getElementById('userId').value; }
-  function regexString() { return document.getElementById('regexString').value; }
+  function title() { return id('title').value; }
+  function userId() { return id('userId').value; }
+  function regexString() { return id('regexString').value; }
 
   function inputsChanged() {
     var url = '';
