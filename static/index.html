@@ -1,40 +1,38 @@
-<title>Soundcasts</title>
-<link rel="icon" href="favicon.ico" />
-
-<h1>Soundcasts</h1>
-
-<label for="title">Title</label>
-<input type="text" id="title" />
-
-<br/>
-
-<label for="userId">User ID</label>
-<input type="text" id="userId" />
-(soundcloud.com/user_id)
-
-<br/>
-
-<label for="regexString">Regex Filter</label>
-<input type="text" id="regexString" value=".*" />
-(case-insensitive JavaScript, optional)
-
-<br/>
-<br/>
-
-<label for="url">URL</label>
-<input type="text" id="url" style="width: 800px;" />
-<a href="" id="link" target="_blank">Link</a>
-
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Soundcasts</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="setup">
+      <div class="header">
+         <p>Soundcasts</p>
+      </div>
+      <div class="input">
+        <input type="text" class="sc-input" id="sc-title" placeholder="Soundcast Title">
+      </div>
+      <div class="input">
+        <input type="text" class="sc-input" id="sc-userId" placeholder="Soundcloud UserId">
+      </div>
+      <div class="input">
+        <input type="text" class="sc-input" id="sc-regex" placeholder="Soundcloud Track Regex">
+      </div>
+      <div class="input">
+        <input type="submit" class="sc-link" id="sc-link" value="URL">
+      </div>
+    </div>
+  </body>
 <script>
   var eventName = 'keyup';
-  id('title').addEventListener(eventName, inputsChanged);
-  id('userId').addEventListener(eventName, inputsChanged);
-  id('regexString').addEventListener(eventName, inputsChanged);
+  id('sc-title').addEventListener(eventName, inputsChanged);
+  id('sc-userId').addEventListener(eventName, inputsChanged);
+  id('sc-regex').addEventListener(eventName, inputsChanged);
 
-  function title() { return id('title').value; }
-  function userId() { return id('userId').value; }
-  function regexString() { return id('regexString').value; }
+  function title() { return document.getElementById('sc-title').value; }
+  function userId() { return document.getElementById('sc-userId').value; }
+  function regexString() { return document.getElementById('sc-regex').value; }
 
   function inputsChanged() {
     var url = '';
@@ -44,11 +42,11 @@
       url += '&userId=' + encodeURIComponent(userId());
       url += '&regexString=' + encodeURIComponent(regexString());
     }
-    id('url').value = url;
-    id('link').setAttribute('href', url);
+    id('sc-link').value = url;
   }
 
   function id(id) {
     return document.getElementById(id);
   }
 </script>
+</html>
