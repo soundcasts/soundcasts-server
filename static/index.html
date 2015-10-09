@@ -50,12 +50,11 @@
     function inputsChanged() {
       var url = '';
       if (title().length && userId().length) {
-        url = 'https://www.soundcasts.net/soundcast';
+        url = 'https://www.soundcasts.net/soundcast.xml';
         url += '?title=' + encodeURIComponent(title());
         url += '&userId=' + encodeURIComponent(userId());
         url += '&regexString=' + encodeURIComponent(regexString());
       }
-//      id('link').setAttribute('href', url);
       id('url').value = url;
       id('regexStringUserId').innerHTML = userId() || 'user_id';
     }
