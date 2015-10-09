@@ -109,3 +109,16 @@ input:focus {
   color: white;
   font-size: 15px;
 }
+
+
+.footer {
+  padding-top: 25px;
+}
+
+.footer p {
+  margin-bottom: 4px;
+}
+
+a {
+  color: inherit;
+}
