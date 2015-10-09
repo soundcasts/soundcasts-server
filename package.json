@@ -1,6 +1,6 @@
 {
   "name": "Soundcasts",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Podcasts for SoundCloud",
   "main": "_server.js",
   "engines": {
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/L33T-KR3W/soundcasts-server.git"
   },
-  "author": "",
+  "author": "L33T KR3W",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/L33T-KR3W/soundcasts-server/issues"
