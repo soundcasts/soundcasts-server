@@ -1,68 +1,111 @@
-body {
-  background: #F8A434;
-  font-family: 'Lato', sans-serif;
-  color: #FDFCFB;
+* {
   text-align: center;
 }
 
-.setup {
-  width: 450px;
-  margin: 17% auto;
+body {
+  font-family: 'Lato', sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 20px;
+  color: #FDFCFB;
+  background: #F8A434;
+  text-align: center;
 }
 
+.container {
+  width: 100%;
+  max-width: 700px;
+}
+
+
 .header {
-  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 45px;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 5px;
+  margin-bottom: 10px;
 }
+
+.header span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
 
 .input {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+
+  margin-bottom: 15px;
 }
 
-.sc-input {
-  height: 44px;
-  border: none;
+.input span {
+  margin-top: 5px;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+
+input:focus + span {
+  opacity: 1;
+}
+
+.input span strong {
+  font-weight: 800;
+  color: #e74c3c;
 }
 
 input {
+  padding: 0 10px;
   width: 100%;
+  height: 44px;
+  border: none;
+  font-size: 15px;
   background: #FDFCFB;
   font-family: inherit;
-  color: #737373;
+  color: #3a3a3a;
   letter-spacing: 1px;
-  text-indent: 5%;
   border-radius: 5px 5px 5px 5px;
+
+  transition: outline 150ms, box-shadow 150ms;
 }
 
-input.sc-input:focus {
-  outline: none;
+input:focus {
   outline: 2px solid #e74c3c;
   box-shadow: 0 0 2px #e74c3c;
 }
 
-.sc-link {
-  height: 44px;
-  border: none;
-  width: 100%;
-  height: 46px;
-  text-align: center;
-  background: #C50A43;
-  font-family: inherit;
-  font-weight: bold;
-  color: inherit;
-  letter-spacing: 1px;
-  border-radius: 5 5 5 5;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
+
+#url {
+  background: #c50a43;
+  font-size: 15px;
 }
 
-.sc-link:focus {
-  outline: none;
+#url:valid {
+  font-size: 10px;
+  color: white;
 }
 
-.sc-link:hover {
-  background: #DA3164;
+#url::-webkit-input-placeholder {
+  color: white;
+  font-size: 15px;
+}
+#url:-moz-placeholder {
+  color: white;
+  font-size: 15px;
+}
+#url::-moz-placeholder {
+  color: white;
+  font-size: 15px;
+}
+#url:-ms-input-placeholder {
+  color: white;
+  font-size: 15px;
 }
