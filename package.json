@@ -1,6 +1,6 @@
 {
   "name": "Soundcasts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Podcasts for SoundCloud",
   "main": "_server.js",
   "engines": {
