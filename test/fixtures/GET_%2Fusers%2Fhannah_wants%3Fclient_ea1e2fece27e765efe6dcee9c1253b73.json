@@ -1,0 +1,41 @@
+{
+  "request": {
+    "httpVersion": "1.1",
+    "headers": {
+      "host": "localhost:1337",
+      "accept": "application/json",
+      "connection": "close"
+    },
+    "trailers": {},
+    "method": "GET",
+    "url": "/users/hannah_wants?client_id=83d37608cef935bb382915730917bb7d&format=json",
+    "bodyEncoding": "utf8",
+    "body": ""
+  },
+  "response": {
+    "httpVersion": "1.1",
+    "headers": {
+      "accept-ranges": "bytes",
+      "access-control-allow-headers": "Accept, Authorization, Content-Type, Origin",
+      "access-control-allow-methods": "GET, PUT, POST, DELETE",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "Date",
+      "age": "21",
+      "cache-control": "max-age=600, public",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 10 Oct 2015 22:01:54 GMT",
+      "etag": "\"2a56253a1306b2a6f0823b8b0254c950\"",
+      "last-modified": "Sat, 10 Oct 2015 22:01:33 GMT",
+      "server": "ECS (sjc/4E34)",
+      "status": "200 OK",
+      "vary": "Accept-Encoding",
+      "x-cache": "HIT",
+      "content-length": "3730",
+      "connection": "close"
+    },
+    "trailers": {},
+    "statusCode": 200,
+    "bodyEncoding": "utf8",
+    "body": "{\"id\":72049,\"kind\":\"user\",\"permalink\":\"hannah_wants\",\"username\":\"Hannah Wants\",\"last_modified\":\"2015/10/10 07:10:11 +0000\",\"uri\":\"https://api.soundcloud.com/users/72049\",\"permalink_url\":\"http://soundcloud.com/hannah_wants\",\"avatar_url\":\"https://i1.sndcdn.com/avatars-000153476543-el6fm5-large.jpg\",\"country\":null,\"first_name\":\"WWW.HANNAHWANTS.COM\",\"last_name\":\"\",\"full_name\":\"WWW.HANNAHWANTS.COM\",\"description\":\"Hannah Wants's Upcoming Gigs\\r\\nSat 10 Oct, 15 \\r\\nChibuku, The Arts Club, Liverpool, United Kingdom\\r\\nFri 16 Oct, 15 \\r\\nStrictly Defected at ADE, Air, Amsterdam, Netherlands\\r\\nThu 29 Oct, 15 \\r\\nFrom Dusk Till Dawn, Audio, San Francisco, United States\\r\\nFri 30 Oct, 15 \\r\\nGood Room, New York, United States\\r\\nSee the full listing here \\r\\n http://gigs.gigatools.com/u/hannah_wants\\r\\n\\r\\nPowered by GigaTools\\r\\n\\r\\nHannah Wants, notorious for her hard-hitting and unique live sets, is a self taught DJ from Birmingham. Over the past few years a new, harder genre of house music has quickly risen to the forefront of the scene, and with her unmistakeable base heavy drops and house music tempo, Hannahs live sets have secured her as base musics leading lady.\\r\\n\\r\\nHannahs faultless high octane delivery behind the decks was heavily influenced by her submersion in garage music growing up - threading together a fine selection of bass heavy cuts, whilst maintaining her innate ability to read a crowd that has propelled her to become of the most in demand DJs of her field. \\r\\n\\r\\nAs well as her garage roots, Hannah was brought up surrounded by a wide variety of music. Her family introduced her to an eclectic mix of sounds; soul, R\\u0026B, rock, indie, 80\\u2019s, 90\\u2019s, electro and house all at a very young and impressionable age. At age 17, armed with a cross genre assortment of musical knowledge, a mixer and pair of Numark belt drive decks; an extensive vinyl collection and impressive ambition Hannah found her talent. As a result Hannah's sets and mixes are now an unmistakable and highly creative culmination of her past.\\r\\n\\r\\nIn 2010 Hannah dedicated her summer to Ibiza to a gain a concrete reputation as a house music DJ. Her unique and commanding style had a profound and powerful impact on clubbers and her peers, as a result she soon found herself in high demand gaining residencies, winning competitions and playing at prestigious events and venues. \\r\\n\\r\\nThe hype surrounding Miss Wants followed her home from the clubbing capital, and with each and every set played her popularity flourished across the UK. One thing, amongst many that continues to set Wants apart from other DJ\\u2019s is her continued free music that she pushes out to her fans. Hannah releases a meticulously crafted 24+ track \\u2018mixtape\\u2019 on her SoundCloud page as a free download for all to enjoy encompassing a wide range of her favourite current tracks and underground sounds, taking you on a journey from start to finish. \\r\\n\\r\\nIn 2013 Hannah signed with Echo Location Talent Agency in the UK and AM Only in the USA firmly asserting her status alongside the UK\\u2019s leading DJ's. The future now looks limitless for Miss Wants, truly respected for her desire to connect with her followers and concrete ability to blow the eardrums of all who listen will inevitably keep Hannah at the top of her game at a time when bass music is entering its golden era.\\r\\n\",\"city\":\"\",\"discogs_name\":null,\"myspace_name\":null,\"website\":\"http://www.hannahwants.com\",\"website_title\":\"\",\"online\":false,\"track_count\":37,\"playlist_count\":3,\"plan\":\"Pro Plus\",\"public_favorites_count\":63,\"followers_count\":221420,\"followings_count\":162,\"subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\",\"name\":\"Pro Unlimited\"}}]}"
+  }
+}
