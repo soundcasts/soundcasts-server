@@ -51,7 +51,7 @@ test('Soundcast channel data', async (t) => {
   t.equal(track.title, 'Hannah Wants: Mixtape 0212');
   t.ok(track.description.match(/FEBRUARY 2012/));
   t.equal(track.duration, '01:19:54');
-  t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + CLIENT_ID);
+  t.equal(track.url, 'http://api.soundcloud.com/tracks/36589477/stream?client_id=' + CLIENT_ID);
   t.equal(track.size, 1);
   t.equal(track.fileFormat, 'mp3');
   t.equal(track.httpFormat, 'audio/mpeg');
