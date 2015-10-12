@@ -3,6 +3,7 @@ import test from 'tape';
 import {CLIENT_ID} from '../lib/constants';
 import Soundcast from '../lib/Soundcast';
 
+
 const USER_ID = 'hannah_wants';
 const QUERY = {
   title: 'Hannah Wants - Mixtape',
@@ -16,7 +17,8 @@ const REQ = {
   query: QUERY
 };
 
-test('Soundcast constructor', (t) => {
+
+test('Soundcast constructor', t => {
   var sc = new Soundcast(REQ);
   t.equal(sc.title, QUERY.title, 'soundcast instance has title');
   t.equal(sc.userId, QUERY.userId, 'soundcast instance has userId');
@@ -24,7 +26,7 @@ test('Soundcast constructor', (t) => {
   t.end();
 });
 
-test('Soundcast regexString defaults', (t) => {
+test('Soundcast regexString defaults', t => {
   var noRegexStringQuery = Object.assign({}, QUERY);
   delete noRegexStringQuery.regexString;
   var noRegexStringRequest = Object.assign({}, REQ);
@@ -37,7 +39,7 @@ test('Soundcast regexString defaults', (t) => {
   t.end();
 });
 
-test('Soundcast channel data', async (t) => {
+test('Soundcast channel data', async t => {
   var sc = new Soundcast(REQ);
 
   var channel = await sc.getChannelData();
@@ -59,7 +61,7 @@ test('Soundcast channel data', async (t) => {
   t.end();
 });
 
-test('Soundcast XML output', async (t) => {
+test('Soundcast XML output', async t => {
   var sc = new Soundcast(REQ);
   await sc.getChannelData();
 
