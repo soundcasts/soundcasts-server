@@ -11,6 +11,6 @@ Android | Podcast Addict | :white_check_mark: | :white_check_mark: | :white_chec
 Android | Podcast Republic | :white_check_mark: | :white_check_mark: | :white_check_mark:
 iOS | Podcasts (Apple) | :white_check_mark: | :no_entry_sign: | :no_entry_sign:
 iOS | Pocket Casts | :white_check_mark: | :white_check_mark: | :white_check_mark:
-iOS | Overcast | :no_entry_sign: | :no_entry_sign: | :no_entry_sign:
+iOS | Overcast | :white_check_mark: | :white_check_mark: | :white_check_mark:
 OS X | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Windows | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
