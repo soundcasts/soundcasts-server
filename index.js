@@ -1,2 +1,1 @@
-require('babel/register');
-require('./lib/server');
+require('./build/server');

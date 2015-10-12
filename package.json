@@ -7,7 +7,8 @@
     "node": "4.1.x"
   },
   "scripts": {
-    "start": "node index.js",
+    "prestart": "rm -rf build && mkdir build && babel lib --out-dir build --source-maps",
+    "start": "node build/server.js",
     "test": "NODE_ENV=test node test/index.js | tap-spec"
   },
   "repository": {
