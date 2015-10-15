@@ -1,0 +1,6 @@
+{
+  "soundcloud": {
+    "host": "http://localhost",
+    "port": 1337
+  }
+}
