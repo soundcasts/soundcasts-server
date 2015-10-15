@@ -24,6 +24,7 @@
   "dependencies": {
     "babel": "^5.8.23",
     "body-parser": "^1.13.2",
+    "deep-extend": "^0.4.0",
     "express": "^4.13.1",
     "js2xmlparser": "^1.0.0",
     "moment": "^2.10.3",

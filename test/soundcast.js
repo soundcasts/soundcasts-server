@@ -1,8 +1,7 @@
 import test from 'tape';
 
-import {CLIENT_ID} from '../lib/constants';
+import config from '../lib/config';
 import Soundcast from '../lib/Soundcast';
-
 
 const USER_ID = 'hannah_wants';
 const QUERY = {
@@ -17,6 +16,7 @@ const REQ = {
   query: QUERY
 };
 
+const clientId = config.soundcloud.clientId;
 
 test('Soundcast constructor', t => {
   var sc = new Soundcast(REQ);
@@ -41,7 +41,6 @@ test('Soundcast regexString defaults', t => {
 
 test('Soundcast channel data', async t => {
   var sc = new Soundcast(REQ);
-
   var channel = await sc.getChannelData();
   t.equal(channel.title, QUERY.title);
   t.equal(channel.author, 'Hannah Wants');
@@ -53,7 +52,7 @@ test('Soundcast channel data', async t => {
   t.equal(track.title, 'Hannah Wants: Mixtape 0212');
   t.ok(track.description.match(/FEBRUARY 2012/));
   t.equal(track.duration, '01:19:54');
-  t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + CLIENT_ID);
+  t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + clientId);
   t.equal(track.size, 1);
   t.equal(track.fileFormat, 'mp3');
   t.equal(track.httpFormat, 'audio/mpeg');
