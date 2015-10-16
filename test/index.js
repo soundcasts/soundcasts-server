@@ -20,3 +20,5 @@ tape('teardown', t => {
   testServer.stop();
   t.end();
 });
+
+require('./util');

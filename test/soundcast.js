@@ -20,6 +20,7 @@ const clientId = config.soundcloud.clientId;
 
 test('Soundcast constructor', t => {
   var sc = new Soundcast(REQ);
+  t.throws(() => new Soundcast({ query: {} }), /title, userId, regexString are required/, 'throws correct error if query params are not supplied');
   t.equal(sc.title, QUERY.title, 'soundcast instance has title');
   t.equal(sc.userId, QUERY.userId, 'soundcast instance has userId');
   t.equal(sc.regexString, QUERY.regexString, 'soundcast instance has regexString');
