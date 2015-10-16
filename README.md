@@ -1,4 +1,5 @@
 # Soundcasts
+[![Build Status](https://travis-ci.org/L33T-KR3W/soundcasts-server.svg)](https://travis-ci.org/L33T-KR3W/soundcasts-server)
 
 Turn SoundCloud profiles into podcasts.
 
