@@ -3,6 +3,7 @@
 [![Build status][build-badge]][build-href]
 [![Coverage status][coverage-badge]][coverage-href]
 [![Tips][ez-money-badge]][ez-money-href]
+[![Dependencies][deps-badge]][deps-href]
 
 Turn SoundCloud profiles into podcasts.
 
@@ -27,3 +28,8 @@ Windows | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
 
 [coverage-badge]: https://coveralls.io/repos/L33T-KR3W/soundcasts-server/badge.svg?branch=master&service=github
 [coverage-href]: https://coveralls.io/github/L33T-KR3W/soundcasts-server?branch=master
+
+[deps-badge]: https://david-dm.org/L33T-KR3W/soundcasts-server.svg
+[deps-href]: https://travis-ci.org/L33T-KR3W/soundcasts-server
+
+
