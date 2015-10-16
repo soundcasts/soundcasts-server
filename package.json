@@ -10,7 +10,7 @@
     "prestart": "rm -rf build && mkdir build && babel lib --out-dir build --source-maps",
     "precover": "rm -rf build-test && mkdir build-test && babel test --out-dir build-test --source-maps",
     "cover": "NODE_ENV=test babel-istanbul cover build-test/index.js -x **/build-test/** | tap-spec",
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
     "test": "NODE_ENV=test babel-node test/index.js | tap-spec",
     "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)"
   },
