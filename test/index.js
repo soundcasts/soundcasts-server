@@ -1,14 +1,14 @@
-require('babel/polyfill');
+import tape from 'tape';
 
-var tape = require('tape');
+import testConfig from '../config/test';
+import TestSoundCloud from './test-soundcloud-api';
 
-var testConfig = require('../config/test');
-var TestSoundCloud = require('./test-soundcloud-api');
+import './util';
 
-var testPort = testConfig.soundcloud.port;
-var testServer = new TestSoundCloud();
+const testPort = testConfig.soundcloud.port;
+const testServer = new TestSoundCloud();
 
-tape('setup', t => {
+tape('mock soundcloud setup', t => {
   testServer.start(testPort);
   t.end();
 });
@@ -16,9 +16,7 @@ tape('setup', t => {
 require('./soundcast');
 require('./soundcloud');
 
-tape('teardown', t => {
+tape('mock soundcloud teardown', t => {
   testServer.stop();
   t.end();
 });
-
-require('./util');
