@@ -30,6 +30,6 @@ Windows | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
 [coverage-href]: https://coveralls.io/github/L33T-KR3W/soundcasts-server?branch=master
 
 [deps-badge]: https://david-dm.org/L33T-KR3W/soundcasts-server.svg
-[deps-href]: https://travis-ci.org/L33T-KR3W/soundcasts-server
+[deps-href]: https://david-dm.org/L33T-KR3W/soundcasts-server
 
 
