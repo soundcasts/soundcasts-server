@@ -7,7 +7,7 @@
     "node": "^5.0.0"
   },
   "scripts": {
-    "prestart": "rm -rf build && mkdir build && babel lib --out-dir build --source-maps",
+    "prestart": "rm -rf build && mkdir build && babel lib --out-dir build --source-maps --optional runtime",
     "start": "NODE_ENV=production node index.js",
     "cover": "NODE_ENV=test babel-node node_modules/.bin/babel-istanbul cover test/index.js",
     "test": "NODE_ENV=test babel-node test/index.js | tap-spec",
