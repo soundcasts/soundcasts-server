@@ -1,9 +1,11 @@
 import express from 'express';
 import nineTrack from 'nine-track';
 
-import productionConfig from '../config/production';
+import productionConfig from '../config/production.json';
+
 
 const realHost = productionConfig.soundcloud.host;
+
 
 export default class TestSoundCloud {
 

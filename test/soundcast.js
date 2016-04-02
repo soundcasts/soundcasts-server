@@ -1,9 +1,11 @@
 import test from 'tape';
 
-import config from '../lib/config';
-import Soundcast from '../lib/Soundcast';
+import config from '../lib/config.js';
+import { getSoundcast, soundcastToXml } from '../lib/soundcast.js';
 
-const USER_ID = 'hannah_wants';
+
+const TIMEOUT = { timeout: 1000 };
+const CLIENT_ID = config.soundcloud.clientId;
 const QUERY = {
   title: 'Hannah Wants - Mixtape',
   userId: 'hannah_wants',
@@ -16,56 +18,68 @@ const REQ = {
   query: QUERY
 };
 
-const clientId = config.soundcloud.clientId;
 
-test('Soundcast constructor', t => {
-  var sc = new Soundcast(REQ);
-  t.throws(() => new Soundcast({ query: {} }), /title, userId, regexString are required/, 'throws correct error if query params are not supplied');
-  t.equal(sc.title, QUERY.title, 'soundcast instance has title');
-  t.equal(sc.userId, QUERY.userId, 'soundcast instance has userId');
-  t.equal(sc.regexString, QUERY.regexString, 'soundcast instance has regexString');
-  t.end();
+test('getSoundcast', TIMEOUT, t => {
+  getSoundcast(QUERY).then(soundcast => {
+    t.equal(soundcast.title, QUERY.title, 'soundcast has title');
+    t.equal(soundcast.userId, QUERY.userId, 'soundcast has userId');
+    t.equal(soundcast.regexString, QUERY.regexString, 'soundcast has regexString');
+    t.end();
+  });
 });
 
-test('Soundcast regexString defaults', t => {
-  var noRegexStringQuery = Object.assign({}, QUERY);
-  delete noRegexStringQuery.regexString;
-  var noRegexStringRequest = Object.assign({}, REQ);
-  noRegexStringRequest.query = noRegexStringQuery;
+test('getSoundcast required params', TIMEOUT, t => {
+  t.plan(3);
 
-  var sc = new Soundcast(noRegexStringRequest);
-  t.equal(sc.title, QUERY.title);
-  t.equal(sc.userId, QUERY.userId);
-  t.equal(sc.regexString, '.*');
-  t.end();
+  const expectedError = 'userId, title, regexString are required';
+  const queryParams = ['userId', 'title', 'regexString'];
+
+  queryParams.forEach(param => {
+    const params = Object.assign({}, QUERY);
+    params[param] = '';
+    getSoundcast(params).catch(err => t.equal(err, expectedError, 'throws correct error if required params are not supplied'));
+  });
 });
 
-test('Soundcast channel data', async t => {
-  var sc = new Soundcast(REQ);
-  var channel = await sc.getChannelData();
-  t.equal(channel.title, QUERY.title);
-  t.equal(channel.author, 'Hannah Wants');
-  t.equal(channel.link, 'http://soundcloud.com/hannah_wants');
-  t.ok(channel.description.match(/Hannah Wants/));
-  t.equal(channel.image, 'http://i1.sndcdn.com/avatars-000153476543-el6fm5-t200x200.jpg');
+test('getSoundcast default regexString', TIMEOUT, t => {
+  const query = Object.assign({}, QUERY);
+  delete query.regexString;
+  const req = Object.assign({}, REQ);
+  req.query = query;
 
-  var track = channel.tracks[channel.tracks.length - 1];
-  t.equal(track.title, 'Hannah Wants: Mixtape 0212');
-  t.ok(track.description.match(/FEBRUARY 2012/));
-  t.equal(track.duration, '01:19:54');
-  t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + clientId);
-  t.equal(track.size, 1);
-  t.equal(track.fileFormat, 'mp3');
-  t.equal(track.httpFormat, 'audio/mpeg');
-  t.equal(track.published, 'Tue, 14 Feb 2012 13:56:32 +0000');
-  t.end();
+  getSoundcast(query).then(soundcast => {
+    t.equal(soundcast.title, QUERY.title);
+    t.equal(soundcast.userId, QUERY.userId);
+    t.equal(soundcast.regexString, '.*');
+    t.end();
+  });
 });
 
-test('Soundcast XML output', async t => {
-  var sc = new Soundcast(REQ);
-  await sc.getChannelData();
+test('Soundcast channel data', TIMEOUT, t => {
+  getSoundcast(QUERY).then(soundcast => {
+    t.equal(soundcast.title, QUERY.title);
+    t.equal(soundcast.author, 'Hannah Wants');
+    t.equal(soundcast.link, 'http://soundcloud.com/hannah_wants');
+    t.equal(/Hannah Wants/.test(soundcast.description), true);
+    t.equal(soundcast.image, 'https://i1.sndcdn.com/avatars-000153476543-el6fm5-t200x200.jpg');
 
-  var xml = sc.toXml();
-  t.ok(xml.length > 1000, 'lots of XML');
-  t.end();
+    const track = soundcast.tracks[soundcast.tracks.length - 1];
+    t.equal(track.title, 'Hannah Wants: Mixtape 0212');
+    t.equal(/FEBRUARY 2012/.test(track.description), true);
+    t.equal(track.duration, '01:19:54');
+    t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + CLIENT_ID);
+    t.equal(track.size, 1);
+    t.equal(track.fileFormat, 'mp3');
+    t.equal(track.httpFormat, 'audio/mpeg');
+    t.equal(track.published, 'Tue, 14 Feb 2012 13:56:32 +0000');
+    t.end();
+  });
+});
+
+test('Soundcast XML output', TIMEOUT, t => {
+  getSoundcast(QUERY).then(soundcast => {
+    const xml = soundcastToXml(soundcast, REQ);
+    t.assert(xml.length > 1000, true, 'lots of XML');
+    t.end();
+  });
 });

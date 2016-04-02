@@ -1,9 +1,9 @@
 import tape from 'tape';
 
-import testConfig from '../config/test';
-import TestSoundCloud from './test-soundcloud-api';
+import testConfig from '../config/test.json';
+import TestSoundCloud from './test-soundcloud-api.js';
 
-import './util';
+import './util.js';
 
 const testPort = testConfig.soundcloud.port;
 const testServer = new TestSoundCloud();
