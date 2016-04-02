@@ -1,11 +1,13 @@
 # Soundcasts
 
-[![Build status][build-badge]][build-href]
-[![Coverage status][coverage-badge]][coverage-href]
-[![Tips][ez-money-badge]][ez-money-href]
-[![Dependencies][deps-badge]][deps-href]
+[![build-status][build-status-badge]][build-status-href]
+[![coverage][coverage-badge]][coverage-href]
+[![dependencies][dependencies-badge]][dependencies-href]
+[![dev-dependencies][dev-dependencies-badge]][dev-dependencies-href]
+
 
 Turn SoundCloud profiles into podcasts.
+
 
 ## Compatibility Table
 
@@ -20,16 +22,15 @@ iOS | Overcast | :white_check_mark: | :white_check_mark: | :white_check_mark:
 OS X | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Windows | iTunes | :white_check_mark: | :white_check_mark: | :white_check_mark:
 
-[build-badge]: https://travis-ci.org/L33T-KR3W/soundcasts-server.svg
-[build-href]: https://travis-ci.org/L33T-KR3W/soundcasts-server
 
-[ez-money-badge]: https://img.shields.io/badge/tips-%24172,098,510,789,234%2Fweek-brightgreen.svg
-[ez-money-href]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[build-status-badge]: https://travis-ci.org/L33T-KR3W/soundcasts-server.svg
+[build-status-href]: https://travis-ci.org/L33T-KR3W/soundcasts-server
 
 [coverage-badge]: https://coveralls.io/repos/L33T-KR3W/soundcasts-server/badge.svg?branch=master&service=github
 [coverage-href]: https://coveralls.io/github/L33T-KR3W/soundcasts-server?branch=master
 
-[deps-badge]: https://david-dm.org/L33T-KR3W/soundcasts-server.svg
-[deps-href]: https://david-dm.org/L33T-KR3W/soundcasts-server
+[dependencies-badge]: https://david-dm.org/L33T-KR3W/soundcasts-server.svg
+[dependencies-href]: https://david-dm.org/L33T-KR3W/soundcasts-server
 
-
+[dev-dependencies-badge]: https://david-dm.org/L33T-KR3W/soundcasts-server/dev-status.svg
+[dev-dependencies-href]: https://david-dm.org/L33T-KR3W/soundcasts-server#info=devDependencies
