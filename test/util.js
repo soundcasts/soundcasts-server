@@ -1,10 +1,10 @@
 import test from 'tape';
 
-import * as util from '../lib/util';
+import * as util from '../lib/util.js';
 
 
 test('formatDuration', t => {
-  var f = util.formatDuration;
+  const f = util.formatDuration;
   t.equal(f('0'), '00:00:00');
   t.equal(f(1000), '00:00:01');
   t.equal(f(60 * 1000), '00:01:00');
@@ -15,9 +15,9 @@ test('formatDuration', t => {
 
 
 test('makeUrl', t => {
-  var f = util.makeUrl;
+  const f = util.makeUrl;
 
-  var req = {
+  const req = {
     protocol: 'http',
     get: () => 'fake-host.com',
     path: '/some-path',
@@ -25,7 +25,7 @@ test('makeUrl', t => {
   };
   t.equal(f(req), 'http://fake-host.com/some-path?query=string%3F');
 
-  var extra = {
+  const extra = {
     protocol: 'https',
     get: () => 'some-other-fake-host.com',
     path: '/some-other-path',
@@ -38,7 +38,7 @@ test('makeUrl', t => {
 
 
 test('queryString', t => {
-  var f = util.queryString;
+  const f = util.queryString;
   t.equal(f({}), '');
   t.equal(f({ string: 'string' }), '?string=string');
   t.equal(f({ string: 'string?' }), '?string=string%3F');
