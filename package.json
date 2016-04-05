@@ -1,6 +1,6 @@
 {
   "name": "Soundcasts",
-  "version": "2.0.0-0",
+  "version": "2.0.0-1",
   "description": "Turn SoundCloud profiles into podcasts.",
   "main": "index.js",
   "engines": {
