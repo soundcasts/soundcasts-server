@@ -1,6 +1,6 @@
 import test from 'tape';
 
-import * as util from '../lib/util.js';
+import * as util from '../src/util.js';
 
 
 test('formatDuration', t => {

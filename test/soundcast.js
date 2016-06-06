@@ -1,7 +1,7 @@
 import test from 'tape';
 
-import config from '../lib/config.js';
-import { getSoundcast, soundcastToXml } from '../lib/soundcast.js';
+import config from '../src/config.js';
+import { getSoundcast, soundcastToXml } from '../src/soundcast.js';
 
 
 const TIMEOUT = { timeout: 1000 };
