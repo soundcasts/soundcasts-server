@@ -4,11 +4,11 @@ import config from '../src/config.js';
 import { getSoundcast, soundcastToXml } from '../src/soundcast.js';
 
 
-const TIMEOUT = { timeout: 1000 };
+const TIMEOUT = { timeout: 20000 };
 const CLIENT_ID = config.soundcloud.clientId;
 const QUERY = {
   title: 'The Anjunadeep Edition',
-  username: 'anjunadeep',
+  userId: 'anjunadeep',
   regexString: 'the anjunadeep edition'
 };
 const REQ = {
@@ -22,7 +22,7 @@ const REQ = {
 test('getSoundcast', TIMEOUT, t => {
   getSoundcast(QUERY).then(soundcast => {
     t.equal(soundcast.title, QUERY.title, 'soundcast has title');
-    t.equal(soundcast.username, QUERY.username, 'soundcast has username');
+    t.equal(soundcast.username, QUERY.userId, 'soundcast has username');
     t.equal(soundcast.regexString, QUERY.regexString, 'soundcast has regexString');
     t.end();
   });
@@ -31,8 +31,8 @@ test('getSoundcast', TIMEOUT, t => {
 test('getSoundcast required params', TIMEOUT, t => {
   t.plan(3);
 
-  const expectedError = 'username, title, regexString are required';
-  const queryParams = ['username', 'title', 'regexString'];
+  const expectedError = 'userId, title, regexString are required';
+  const queryParams = ['userId', 'title', 'regexString'];
 
   queryParams.forEach(param => {
     const params = Object.assign({}, QUERY);
@@ -49,7 +49,7 @@ test('getSoundcast default regexString', TIMEOUT, t => {
 
   getSoundcast(query).then(soundcast => {
     t.equal(soundcast.title, QUERY.title);
-    t.equal(soundcast.username, QUERY.username);
+    t.equal(soundcast.username, QUERY.userId);
     t.equal(soundcast.regexString, '.*');
     t.end();
   });
