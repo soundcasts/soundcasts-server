@@ -6,21 +6,22 @@ import SoundCloud from './soundcloud.js';
 import { formatDuration, makeUrl } from './util.js';
 
 
-export function getSoundcast({userId, title, regexString='.*', minDuration=0}) {
-  if (!userId || !title || !regexString) {
-    return Promise.reject('userId, title, regexString are required');
+export function getSoundcast({username, title, regexString='.*', minDuration=0}) {
+  if (!username || !title || !regexString) {
+    return Promise.reject('username, title, regexString are required');
   }
 
   const soundcast = {
-    userId,
+    username,
     title,
     regexString,
     minDuration: minDuration * 60000,
   };
 
   const clientId = config.soundcloud.clientId;
-  const userPromise = getUserData(userId, clientId);
-  const tracksPromise = getTracksData(userId, regexString, minDuration, clientId);
+  const userPromise = getUserData(username, clientId);
+  const tracksPromise = userPromise
+    .then(user => getTracksData(user.id, regexString, minDuration, clientId));
 
   return Promise
     .all([userPromise, tracksPromise])
@@ -28,9 +29,10 @@ export function getSoundcast({userId, title, regexString='.*', minDuration=0}) {
 }
 
 
-export function getUserData(userId, clientId) {
+export function getUserData(username, clientId) {
   const userMap = user => ({
     author: user.username,
+    id: user.id,
     link: user.permalink_url,
     description: user.description,
     image: user.avatar_url.replace(/large/, 't200x200'),
@@ -38,7 +40,7 @@ export function getUserData(userId, clientId) {
 
   const soundcloud = new SoundCloud(clientId);
   return soundcloud
-    .getUser(userId)
+    .getUser(username)
     .then(userMap);
 }
 

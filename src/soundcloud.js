@@ -15,8 +15,8 @@ export default class SoundCloud {
     this.clientId = clientId;
   }
 
-  getUser(userId) {
-    const url = `${SOUNDCLOUD_URL}/users/${userId}`;
+  getUser(username) {
+    const url = `${SOUNDCLOUD_URL}/users/${username}`;
     return this._get(url);
   }
 
