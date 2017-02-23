@@ -5,7 +5,8 @@ import SoundCloud from '../src/soundcloud.js';
 
 
 const CLIENT_ID = config.soundcloud.clientId;
-const USER_ID = 'hannah_wants';
+const username = 'anjunadeep';
+const userId = '237204';
 
 
 test('soundcloud constructor', t => {
@@ -21,15 +22,15 @@ test('soundcloud constructor', t => {
 
 test('soundcloud getUser method', async t => {
   const soundcloud = new SoundCloud(CLIENT_ID);
-  const user = await soundcloud.getUser(USER_ID);
-  t.equal(user.username, 'Hannah Wants', 'expected username found');
+  const user = await soundcloud.getUser(username);
+  t.equal(user.username, 'Anjunadeep', 'expected username found');
   t.end();
 });
 
 test('soundcloud getTracks method', async t => {
   const sc = new SoundCloud(CLIENT_ID);
-  const tracks = await sc.getTracks(USER_ID);
+  const tracks = await sc.getTracks(userId);
   const track = tracks[tracks.length - 1];
-  t.equal(track.title, 'Hannah Wants - Ibiza 2010 Reminiscence Mix', 'expected track found');
+  t.equal(track.title, 'Michael Cassette - Shadows Movement', 'expected track found');
   t.end();
 });

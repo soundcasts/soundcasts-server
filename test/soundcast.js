@@ -7,9 +7,9 @@ import { getSoundcast, soundcastToXml } from '../src/soundcast.js';
 const TIMEOUT = { timeout: 1000 };
 const CLIENT_ID = config.soundcloud.clientId;
 const QUERY = {
-  title: 'Hannah Wants - Mixtape',
-  username: 'hannah_wants',
-  regexString: 'mixtape'
+  title: 'The Anjunadeep Edition',
+  username: 'anjunadeep',
+  regexString: 'the anjunadeep edition'
 };
 const REQ = {
   protocol: 'http',
@@ -58,20 +58,20 @@ test('getSoundcast default regexString', TIMEOUT, t => {
 test('Soundcast channel data', TIMEOUT, t => {
   getSoundcast(QUERY).then(soundcast => {
     t.equal(soundcast.title, QUERY.title);
-    t.equal(soundcast.author, 'Hannah Wants');
-    t.equal(soundcast.link, 'http://soundcloud.com/hannah_wants');
-    t.equal(/Hannah Wants/.test(soundcast.description), true);
-    t.equal(soundcast.image, 'https://i1.sndcdn.com/avatars-000153476543-el6fm5-t200x200.jpg');
+    t.equal(soundcast.author, 'Anjunadeep');
+    t.equal(soundcast.link, 'http://soundcloud.com/anjunadeep');
+    t.equal(/Anjunadeep/.test(soundcast.description), true);
+    t.equal(soundcast.image, 'https://i1.sndcdn.com/avatars-000279191688-kpcox9-t200x200.jpg');
 
     const track = soundcast.tracks[soundcast.tracks.length - 1];
-    t.equal(track.title, 'Hannah Wants: Mixtape 0212');
-    t.equal(/FEBRUARY 2012/.test(track.description), true);
-    t.equal(track.duration, '01:19:54');
-    t.equal(track.url, 'https://api.soundcloud.com/tracks/36589477/stream?client_id=' + CLIENT_ID);
+    t.equal(track.title, 'The Anjunadeep Edition 255 with James Grant');
+    t.equal(/Anjunadeep/.test(track.description), true);
+    t.equal(track.duration, '01:58:35');
+    t.equal(track.url, 'https://api.soundcloud.com/tracks/30497648/stream?client_id=' + CLIENT_ID);
     t.equal(track.size, 1);
     t.equal(track.fileFormat, 'mp3');
     t.equal(track.httpFormat, 'audio/mpeg');
-    t.equal(track.published, 'Tue, 14 Feb 2012 13:56:32 +0000');
+    t.equal(track.published, 'Tue, 13 Dec 2011 10:37:14 +0000');
     t.end();
   });
 });

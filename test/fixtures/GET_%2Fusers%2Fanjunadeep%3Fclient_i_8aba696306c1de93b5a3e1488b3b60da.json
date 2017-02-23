@@ -1,0 +1,40 @@
+{
+  "request": {
+    "httpVersion": "1.1",
+    "headers": {
+      "host": "localhost:1337",
+      "accept": "application/json",
+      "connection": "close"
+    },
+    "trailers": {},
+    "method": "GET",
+    "url": "/users/anjunadeep?client_id=83d37608cef935bb382915730917bb7d&format=json",
+    "bodyEncoding": "utf8",
+    "body": ""
+  },
+  "response": {
+    "httpVersion": "1.1",
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "952",
+      "connection": "close",
+      "access-control-allow-origin": "*",
+      "access-control-allow-headers": "Accept, Authorization, Content-Type, Origin",
+      "access-control-allow-methods": "GET, PUT, POST, DELETE",
+      "cache-control": "max-age=600, public",
+      "access-control-expose-headers": "Date",
+      "date": "Thu, 23 Feb 2017 21:52:42 GMT",
+      "etag": "\"e0ff6735aa868d0aeb90d96f12c05d40\"",
+      "status": "200 OK",
+      "server": "am/2",
+      "vary": "Authorization,Accept",
+      "x-cache": "Miss from cloudfront",
+      "via": "1.1 ee9d39c7785a9185384280d8c69fefec.cloudfront.net (CloudFront)",
+      "x-amz-cf-id": "czTZJUC_601HnedjHaOfPoPPCfpTKQwkQANcV1fgKbFCd28WOKUshg=="
+    },
+    "trailers": {},
+    "statusCode": 200,
+    "bodyEncoding": "utf8",
+    "body": "{\"id\":237204,\"kind\":\"user\",\"permalink\":\"anjunadeep\",\"username\":\"Anjunadeep\",\"last_modified\":\"2017/02/08 17:01:35 +0000\",\"uri\":\"https://api.soundcloud.com/users/237204\",\"permalink_url\":\"http://soundcloud.com/anjunadeep\",\"avatar_url\":\"https://i1.sndcdn.com/avatars-000279191688-kpcox9-large.jpg\",\"country\":null,\"first_name\":\"\",\"last_name\":\"\",\"full_name\":\"\",\"description\":\"\\\"One of the hottest electronic labels in the world\\\" - Hype Machine\\n\\nBuy/Stream 'Anjunadeep 08': https://anjunadeep.lnk.to/Deep08so\\n\\nSpotify: http://po.st/sAnjunadeep\\nYoutube: http://po.st/ytdeep\",\"city\":\"London\",\"discogs_name\":null,\"myspace_name\":null,\"website\":\"http://www.anjunadeep.com\",\"website_title\":\"Anjunadeep.com\",\"track_count\":816,\"playlist_count\":184,\"online\":false,\"plan\":\"Pro Plus\",\"subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\",\"name\":\"Pro Unlimited\"}}],\"followers_count\":145150,\"followings_count\":89,\"public_favorites_count\":178,\"reposts_count\":227}"
+  }
+}
