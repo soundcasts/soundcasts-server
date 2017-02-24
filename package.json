@@ -40,9 +40,9 @@
   "devDependencies": {
     "coveralls": "^2.11.9",
     "istanbul": "^1.0.0-alpha.2",
-    "nine-track": "^3.0.1",
     "tap-spec": "^4.1.1",
-    "tape": "^4.5.1"
+    "tape": "^4.5.1",
+    "yakbak": "^2.5.0"
   },
   "license": "MIT"
 }
