@@ -11,8 +11,8 @@ Turn SoundCloud profiles into podcasts.
 This is the repo for the SoundCasts API. The SoundCasts website source code lives here: https://github.com/L33T-KR3W/soundcasts-web
 
 
-[build-status-badge]: https://travis-ci.org/L33T-KR3W/soundcasts-server.svg
-[build-status-href]: https://travis-ci.org/L33T-KR3W/soundcasts-server
+[build-status-badge]: https://travis-ci.org/soundcasts/soundcasts-server.svg
+[build-status-href]: https://travis-ci.org/soundcasts/soundcasts-server
 
 [coverage-badge]: https://coveralls.io/repos/L33T-KR3W/soundcasts-server/badge.svg?branch=master&service=github
 [coverage-href]: https://coveralls.io/github/L33T-KR3W/soundcasts-server?branch=master
