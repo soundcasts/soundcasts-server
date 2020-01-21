@@ -1,6 +1,6 @@
-import test from 'tape';
+const test = require('tape');
 
-import * as util from '../src/util.js';
+const util = require('../src/util.js');
 
 
 test('formatDuration', t => {

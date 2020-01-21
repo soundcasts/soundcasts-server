@@ -16,19 +16,12 @@
   "homepage": "https://github.com/L33T-KR3W/soundcasts-server",
   "bugs": "https://github.com/L33T-KR3W/soundcasts-server/issues",
   "scripts": {
-    "transpile": "BABEL_ENV=development babel src --out-dir build --source-maps",
     "start": "NODE_ENV=production node index.js",
-    "cover": "BABEL_ENV=development NODE_ENV=test babel-node node_modules/istanbul/lib/cli.js cover test/index.js",
-    "test": "BABEL_ENV=development NODE_ENV=test babel-node test/index.js | tap-spec",
-    "travis-test": "yarn run cover && ((cat coverage/lcov.info | coveralls) || exit 0)"
+    "cover": "c8 yarn run test",
+    "test": "NODE_ENV=test node test/index.js | tap-spec",
+    "travis-test": "yarn run cover && ((c8 report --reporter=text-lcov | coveralls) || exit 0)"
   },
   "dependencies": {
-    "babel-cli": "6.x",
-    "babel-plugin-transform-async-to-generator": "6.x",
-    "babel-plugin-transform-es2015-destructuring": "6.x",
-    "babel-plugin-transform-es2015-parameters": "6.x",
-    "babel-plugin-transform-object-rest-spread": "6.x",
-    "babel-preset-es2015-node": "6.x",
     "body-parser": "^1.15.1",
     "deep-extend": "^0.4.1",
     "express": "^4.13.4",
@@ -37,8 +30,8 @@
     "request": "^2.72.0"
   },
   "devDependencies": {
+    "c8": "^7.0.1",
     "coveralls": "^2.11.9",
-    "istanbul": "^1.0.0-alpha.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
     "yakbak": "^2.5.0"
