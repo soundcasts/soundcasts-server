@@ -1,15 +1,10 @@
-import request from 'request';
+const request = require('request');
 
-import config from './config.js';
-
-const { soundcloud } = config;
-
+const { soundcloud } = require('./config.js');
 
 const SOUNDCLOUD_URL = soundcloud.port ? `${soundcloud.host}:${soundcloud.port}` : soundcloud.host;
 
-
-export default class SoundCloud {
-
+class SoundCloud {
   constructor(clientId) {
     if (!clientId) throw new Error('clientId is required');
     this.clientId = clientId;
@@ -53,5 +48,6 @@ export default class SoundCloud {
         else resolve(all);
       });
   }
-
 }
+
+module.exports = SoundCloud;

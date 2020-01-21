@@ -1,0 +1,10 @@
+{
+  "builds": [
+    { "src": "/index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/soundcast.xml", "dest": "/index.js" },
+    { "src": "/soundcast.json", "dest": "/index.js" },
+    { "src": "/track.*", "dest": "/index.js" }
+  ]
+}

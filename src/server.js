@@ -1,10 +1,9 @@
-import bodyParser from 'body-parser';
-import express from 'express';
+const bodyParser = require('body-parser');
+const express = require('express');
 
-import routes from './routes.js';
+const routes = require('./routes.js');
 
-
-// configure app
+// Configure app
 var app = express();
 app.use(bodyParser.json());
 app.use(routes);
@@ -12,8 +11,7 @@ app.use(express.static('static'));
 app.set('port', (process.env.PORT || 3001));
 app.set('trust proxy', true);
 
-
-// start server
+// Start server
 app.listen(app.get('port'), function() {
   console.log(`server started on port ${app.get('port')}`);
 });

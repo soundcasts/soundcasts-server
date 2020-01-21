@@ -1,9 +1,8 @@
-import deepExtend from 'deep-extend';
+const deepExtend = require('deep-extend');
 
-import common from '../config/common.json';
-import test from '../config/test.json';
-import production from '../config/production.json';
-
+const common = require('../config/common.json');
+const test = require('../config/test.json');
+const production = require('../config/production.json');
 
 const envConfigs = { test, production };
-export default deepExtend(common, envConfigs[process.env.NODE_ENV]);
+module.exports = deepExtend(common, envConfigs[process.env.NODE_ENV]);

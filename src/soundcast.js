@@ -1,12 +1,11 @@
-import js2xmlparser from 'js2xmlparser';
-import moment from 'moment';
+const js2xmlparser = require('js2xmlparser');
+const moment = require('moment');
 
-import config from './config.js';
-import SoundCloud from './soundcloud.js';
-import { formatDuration, makeUrl } from './util.js';
+const config = require('./config.js');
+const SoundCloud = require('./soundcloud.js');
+const { formatDuration, makeUrl } = require('./util.js');
 
-
-export function getSoundcast({userId, title, regexString='.*', minDuration=0}) {
+function getSoundcast({userId, title, regexString='.*', minDuration=0}) {
   if (!userId || !title || !regexString) {
     return Promise.reject('userId, title, regexString are required');
   }
@@ -28,8 +27,7 @@ export function getSoundcast({userId, title, regexString='.*', minDuration=0}) {
     .then(([user, tracks]) => Object.assign({}, soundcast, user, {tracks}));
 }
 
-
-export function getUserData(username, clientId) {
+function getUserData(username, clientId) {
   const userMap = user => ({
     author: user.username,
     id: user.id,
@@ -44,8 +42,7 @@ export function getUserData(username, clientId) {
     .then(userMap);
 }
 
-
-export function getTracksData(userId, regexString, minDuration, clientId) {
+function getTracksData(userId, regexString, minDuration, clientId) {
   const soundcloud = new SoundCloud(clientId);
 
   const trackRegex = new RegExp(regexString, 'i');
@@ -55,7 +52,7 @@ export function getTracksData(userId, regexString, minDuration, clientId) {
     && track.state === 'finished'
     && track.duration >= minDuration
   );
-  
+
   const trackMap = track => ({
     title: track.title,
     description: track.description,
@@ -66,15 +63,14 @@ export function getTracksData(userId, regexString, minDuration, clientId) {
     httpFormat: 'audio/mpeg',
     published: moment(track.created_at, 'YYYY/MM/DD HH:mm:ss ZZ').utc().format('ddd, DD MMM YYYY HH:mm:ss ZZ'),
   });
-  
+
   return soundcloud
     .getTracks(userId)
     .then(tracks => tracks.filter(trackFilter))
     .then(tracks => tracks.map(trackMap));
 }
 
-
-export function soundcastToXml(soundcast, request) {
+function soundcastToXml(soundcast, request) {
   const dataObject = {
     '@': {
       'xmlns:itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
@@ -113,3 +109,10 @@ export function soundcastToXml(soundcast, request) {
   const safeDataString = dataString.replace(/[^\x09\x0A\x0D\x20-\xFF\x85\xA0-\uD7FF\uE000-\uFDCF\uFDE0-\uFFFD]/gm, ''); // remove illegal xml characters
   return safeDataString;
 }
+
+module.exports = {
+  getSoundcast,
+  getUserData,
+  getTracksData,
+  soundcastToXml
+};

@@ -4,7 +4,7 @@
   "description": "Turn SoundCloud profiles into podcasts.",
   "main": "index.js",
   "engines": {
-    "node": "6.x"
+    "node": "12.x"
   },
   "author": "L33T KR3W",
   "contributors": [
@@ -17,7 +17,6 @@
   "bugs": "https://github.com/L33T-KR3W/soundcasts-server/issues",
   "scripts": {
     "transpile": "BABEL_ENV=development babel src --out-dir build --source-maps",
-    "prestart": "rm -rf build && mkdir build && yarn run transpile",
     "start": "NODE_ENV=production node index.js",
     "cover": "BABEL_ENV=development NODE_ENV=test babel-node node_modules/istanbul/lib/cli.js cover test/index.js",
     "test": "BABEL_ENV=development NODE_ENV=test babel-node test/index.js | tap-spec",
