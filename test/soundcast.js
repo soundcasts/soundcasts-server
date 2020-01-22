@@ -3,8 +3,7 @@ const test = require('tape');
 const config = require('../src/config.js');
 const { getSoundcast, soundcastToXml } = require('../src/soundcast.js');
 
-
-const TIMEOUT = { timeout: 20000 };
+const TIMEOUT = { timeout: 60000 };
 const CLIENT_ID = config.soundcloud.clientId;
 const QUERY = {
   title: 'The Anjunadeep Edition',
@@ -17,7 +16,6 @@ const REQ = {
   path: '/soundcast',
   query: QUERY
 };
-
 
 test('getSoundcast', TIMEOUT, t => {
   getSoundcast(QUERY).then(soundcast => {
