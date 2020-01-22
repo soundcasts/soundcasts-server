@@ -1,9 +1,6 @@
-import { format } from 'url';
+const moment = require('moment');
 
-import moment from 'moment';
-
-
-export function formatDuration(duration) {
+function formatDuration(duration) {
   var m = moment.duration(duration);
   return ['hours', 'minutes', 'seconds']
     .map(t => String(m[t]()))
@@ -11,8 +8,7 @@ export function formatDuration(duration) {
     .join(':');
 }
 
-
-export function makeUrl(origReq, extra={}) {
+function makeUrl(origReq, extra={}) {
   var req = {
     protocol: origReq.protocol,
     get: origReq.get.bind(origReq),
@@ -24,8 +20,7 @@ export function makeUrl(origReq, extra={}) {
   return `${req.protocol}://${req.get('host')}${req.path}${queryString(req.query)}`;
 }
 
-
-export function queryString(params) {
+function queryString(params) {
   var qs = [];
   Object.getOwnPropertyNames(params).forEach(key => {
     qs.push(`${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -33,3 +28,9 @@ export function queryString(params) {
   if (qs.length) return `?${qs.join('&')}`;
   else return '';
 }
+
+module.exports = {
+  formatDuration,
+  makeUrl,
+  queryString
+};

@@ -1,7 +1,7 @@
-import test from 'tape';
+const test = require('tape');
 
-import config from '../src/config.js';
-import { getSoundcast, soundcastToXml } from '../src/soundcast.js';
+const config = require('../src/config.js');
+const { getSoundcast, soundcastToXml } = require('../src/soundcast.js');
 
 
 const TIMEOUT = { timeout: 20000 };

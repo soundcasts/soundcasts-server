@@ -1,7 +1,7 @@
-import test from 'tape';
+const test = require('tape');
 
-import config from '../src/config.js';
-import SoundCloud from '../src/soundcloud.js';
+const config = require('../src/config.js');
+const SoundCloud = require('../src/soundcloud.js');
 
 
 const CLIENT_ID = config.soundcloud.clientId;

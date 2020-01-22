@@ -1,12 +1,12 @@
-import express from 'express';
-import yakbak from 'yakbak';
+const express = require('express');
+const yakbak = require('yakbak');
 
-import productionConfig from '../config/production.json';
+const productionConfig = require('../config/production.json');
 
 
 const realHost = productionConfig.soundcloud.host;
 
-export default class TestSoundCloud {
+module.exports = class TestSoundCloud {
 
   start(port) {
     this.server = express().use(yakbak(realHost, {
