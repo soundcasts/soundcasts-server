@@ -26,7 +26,7 @@
     "deep-extend": "^0.4.1",
     "express": "^4.13.4",
     "js2xmlparser": "^1.0.0",
-    "moment": "^2.13.0",
+    "moment": "^2.29.4",
     "request": "^2.72.0"
   },
   "devDependencies": {
